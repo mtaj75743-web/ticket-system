@@ -1,24 +1,40 @@
 
 let bookings = JSON.parse(
-    localStorage.getItem("ticketBookings") || "[]"
+    localStorage.getItem("ticketlyBookings") || "[]"
 );
 
-function displayBookings() {
-    const list = document.getElementById("bookingList");
+const form = document.getElementById("bookingForm");
+const list = document.getElementById("bookingList");
+const message = document.getElementById("message");
 
+function saveBookings() {
+    localStorage.setItem(
+        "ticketlyBookings",
+        JSON.stringify(bookings)
+    );
+}
+
+function showBookings() {
     if (bookings.length === 0) {
-        list.innerHTML = "<p>No bookings yet. Book your first ticket!</p>";
+        list.innerHTML = `
+            <div class="empty">
+                <h3>No bookings yet!</h3>
+                <p>Create your first demo booking.</p>
+            </div>
+        `;
         return;
     }
 
-    list.innerHTML = bookings.map((booking, index) => `
+    list.innerHTML = bookings.map((b, index) => `
         <div class="booking-item">
-            <h3>${booking.event}</h3>
-            <p><b>Name:</b> ${booking.name}</p>
-            <p><b>Email:</b> ${booking.email}</p>
-            <p><b>Date:</b> ${booking.date}</p>
-            <p><b>Tickets:</b> ${booking.quantity}</p>
-            <p><b>Booking ID:</b> ${booking.id}</p>
+            <div>
+                <h3>${escapeHTML(b.event)}</h3>
+                <p>Name: ${escapeHTML(b.name)}</p>
+                <p>Email: ${escapeHTML(b.email)}</p>
+                <p>Date: ${escapeHTML(b.date)}</p>
+                <p>Tickets: ${escapeHTML(b.quantity)}</p>
+                <p>Booking ID: ${escapeHTML(b.id)}</p>
+            </div>
             <button onclick="cancelBooking(${index})">
                 Cancel Booking
             </button>
@@ -26,54 +42,61 @@ function displayBookings() {
     `).join("");
 }
 
-document.getElementById("bookingForm")
-.addEventListener("submit", function(event) {
-    event.preventDefault();
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, c => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+    })[c]);
+}
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const selectedDate = document.getElementById("date").value;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    if (new Date(selectedDate + "T00:00:00") < today) {
+        message.textContent = "Please select a future date.";
+        return;
+    }
 
     const booking = {
         id: "TK" + Date.now(),
         name: document.getElementById("name").value.trim(),
         email: document.getElementById("email").value.trim(),
         event: document.getElementById("event").value,
-        date: document.getElementById("date").value,
+        date: selectedDate,
         quantity: document.getElementById("quantity").value
     };
 
     bookings.push(booking);
+    saveBookings();
+    showBookings();
 
-    localStorage.setItem(
-        "ticketBookings",
-        JSON.stringify(bookings)
-    );
+    message.textContent = "Demo booking created successfully!";
 
-    displayBookings();
-
-    alert("Your demo booking is successful!");
-
-    this.reset();
+    form.reset();
 
     document.getElementById("dashboard")
         .scrollIntoView({ behavior: "smooth" });
 });
 
 function cancelBooking(index) {
-    if (confirm("Are you sure you want to cancel?")) {
+    if (confirm("Are you sure you want to cancel this booking?")) {
         bookings.splice(index, 1);
-
-        localStorage.setItem(
-            "ticketBookings",
-            JSON.stringify(bookings)
-        );
-
-        displayBookings();
+        saveBookings();
+        showBookings();
     }
 }
 
-function showLogin() {
-    const email = prompt("Enter your email address:");
-    if (email) {
-        alert("Welcome! This is a demo sign-in.");
-    }
-}
+showBookings();
 
-displayBookings();
+const dateInput = document.getElementById("date");
+const today = new Date();
+const offset = today.getTimezoneOffset();
+dateInput.min = new Date(today.getTime() - offset * 60000)
+    .toISOString().split("T")[0];
