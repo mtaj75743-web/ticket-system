@@ -501,3 +501,228 @@ footer p {
         flex-direction: column;
     }
 }
+
+/* ===== PREMIUM TICKETLY AUTH DESIGN ===== */
+
+header .auth-button {
+    background: #20221f !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 13px 23px !important;
+    border-radius: 30px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+header .auth-button:hover {
+    background: #647d65 !important;
+    transform: translateY(-2px);
+}
+
+/* Modal background */
+
+.auth-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(18, 25, 20, 0.72);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.auth-modal.show {
+    display: flex;
+    animation: authFade 0.3s ease;
+}
+
+@keyframes authFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Login box */
+
+.auth-box {
+    width: 100%;
+    max-width: 440px;
+    padding: 42px 36px;
+    background: #fbfcf8;
+    border-radius: 25px;
+    position: relative;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.3);
+    animation: authSlide 0.35s ease;
+}
+
+@keyframes authSlide {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.auth-box::before {
+    content: "✦ TICKETLY";
+    display: block;
+    color: #647d65;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.auth-box h2 {
+    font-size: 30px;
+    color: #20221f;
+    margin-bottom: 10px;
+}
+
+.auth-box > p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.close-auth {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    background: #e9eee6;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+    color: #20221f;
+    cursor: pointer;
+}
+
+/* Tabs */
+
+.auth-tabs {
+    display: flex;
+    padding: 5px;
+    background: #e9eee6;
+    border-radius: 12px;
+    gap: 5px;
+    margin: 25px 0;
+}
+
+.auth-tabs button {
+    flex: 1;
+    padding: 13px;
+    border: none;
+    background: transparent;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-tabs button.active {
+    background: #20221f;
+    color: white;
+    box-shadow: 0 4px 10px #0002;
+}
+
+/* Inputs */
+
+#authForm {
+    display: grid;
+    gap: 16px;
+}
+
+#authForm input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #e0e3dc;
+    border-radius: 11px;
+    outline: none;
+    background: white;
+    color: #20221f;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+#authForm input:focus {
+    border-color: #718a70;
+    box-shadow: 0 0 0 3px #718a7020;
+}
+
+#authForm input[hidden] {
+    display: none;
+}
+
+/* Submit button */
+
+#authSubmit {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 11px;
+    background: #20221f;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#authSubmit:hover {
+    background: #647d65;
+    transform: translateY(-2px);
+}
+
+#authMessage {
+    font-size: 13px;
+    text-align: center;
+    color: #647d65;
+    min-height: 18px;
+}
+
+/* Hero ticket card improvement */
+
+.hero-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    text-align: center;
+    padding: 40px;
+}
+
+.hero-card .ticket-icon {
+    display: block;
+    font-size: 85px;
+    margin: 35px 0 20px;
+}
+
+.hero-card h2 {
+    margin-bottom: 12px;
+}
+
+.hero-card p {
+    margin: 0;
+}
+
+@media(max-width: 500px) {
+    .auth-box {
+        padding: 35px 23px;
+    }
+
+    .auth-box h2 {
+        font-size: 25px;
+    }
+}
