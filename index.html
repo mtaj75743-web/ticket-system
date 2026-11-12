@@ -4,37 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticketly | Online Ticket System</title>
+    <title>Ticketly | Online Ticket Booking</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div class="announcement">
+    Your next great experience starts here.
+</div>
+
 <header>
-    <div class="logo">✦ Ticketly</div>
+    <a href="#home" class="logo">✦ Ticketly.</a>
+
     <nav>
         <a href="#home">Home</a>
-        <a href="#features">Features</a>
+        <a href="#events">Explore</a>
+        <a href="#how">How it works</a>
         <a href="#booking">Book Ticket</a>
-        <a href="#dashboard">Dashboard</a>
+        <a href="#dashboard">My Bookings</a>
     </nav>
-    <button onclick="showLogin()">Sign In</button>
+
+    <a href="#booking" class="nav-btn">Get Started ↗</a>
 </header>
 
 <section class="hero" id="home">
-    <p class="tag">TECH TITANS PRESENTS</p>
-    <h1>Every journey.<br><span>One simple booking.</span></h1>
-    <p class="subtitle">
-        Discover, book and manage your tickets with a
-        seamless online booking experience.
-    </p>
-    <a href="#booking" class="primary">Book Your Ticket ↗</a>
+    <div class="hero-content">
+        <p class="tag">THE SMARTER WAY TO BOOK</p>
 
-    <div class="hero-image">
-        <div class="ticket-card">
-            <span>YOUR NEXT JOURNEY</span>
-            <h2>Travel without limits.</h2>
-            <p>Simple. Fast. Convenient.</p>
-            <div class="ticket-line"></div>
+        <h1>Make plans.<br>
+            <span>Make memories.</span>
+        </h1>
+
+        <p class="description">
+            Discover exciting events, book your tickets
+            and manage your plans with one simple platform.
+            Your next experience is just a few clicks away.
+        </p>
+
+        <a href="#events" class="primary-btn">
+            Explore Experiences →
+        </a>
+
+        <p class="small-text">
+            Simple booking · Easy management · Better experiences
+        </p>
+    </div>
+
+    <div class="hero-card">
+        <div class="ticket">
+            <p>TICKETLY EXPERIENCE</p>
+            <div class="ticket-art">
+                <span>✦</span>
+                <h2>LIVE<br>MORE.</h2>
+                <small>COLLECT MOMENTS, NOT JUST TICKETS</small>
+            </div>
+            <h3>Good times ahead.</h3>
+            <hr>
             <div class="ticket-bottom">
                 <span>TECH TITANS</span>
                 <span>2026</span>
@@ -43,67 +68,171 @@
     </div>
 </section>
 
-<section class="features" id="features">
-    <p class="tag">WHY TICKETLY?</p>
-    <h2>Booking made beautiful.</h2>
+<section class="stats">
+    <div><h3>01</h3><p>Discover Events</p></div>
+    <div><h3>02</h3><p>Easy Booking</p></div>
+    <div><h3>03</h3><p>Manage Tickets</p></div>
+    <div><h3>04</h3><p>Enjoy Experiences</p></div>
+</section>
 
-    <div class="feature-grid">
-        <div class="feature">
-            <h3>01. Easy Booking</h3>
-            <p>Book your tickets in just a few clicks.</p>
+<section class="section" id="events">
+    <p class="tag">EXPLORE YOUR INTERESTS</p>
+    <h2>Find your next<br><span>favourite experience.</span></h2>
+
+    <div class="event-grid">
+        <div class="event music">
+            <h3>♫</h3>
+            <p>01 / MUSIC</p>
+            <h2>Live<br>Music.</h2>
+            <small>Concerts and festivals</small>
         </div>
-        <div class="feature">
-            <h3>02. Instant Confirmation</h3>
-            <p>Get booking details immediately.</p>
+
+        <div class="event cinema">
+            <h3>▶</h3>
+            <p>02 / CINEMA</p>
+            <h2>Movie<br>Night.</h2>
+            <small>Movies and screenings</small>
         </div>
-        <div class="feature">
-            <h3>03. Smart Dashboard</h3>
-            <p>Manage and track all your bookings.</p>
+
+        <div class="event sports">
+            <h3>◎</h3>
+            <p>03 / SPORTS</p>
+            <h2>Feel the<br>Thrill.</h2>
+            <small>Matches and live action</small>
         </div>
     </div>
 </section>
 
-<section class="booking" id="booking">
-    <p class="tag">GET STARTED</p>
-    <h2>Book your ticket.</h2>
+<section class="how" id="how">
+    <div>
+        <p class="tag">HOW IT WORKS</p>
+        <h2>Three steps.<br>One great plan.</h2>
+        <p class="how-description">
+            We make ticket booking simple and convenient
+            so you can focus on enjoying your experience.
+        </p>
+    </div>
+
+    <div class="steps">
+        <div class="step">
+            <span>01</span>
+            <div>
+                <h3>Discover Events</h3>
+                <p>Explore different categories and choose your experience.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span>02</span>
+            <div>
+                <h3>Book Your Ticket</h3>
+                <p>Enter your details and select your preferred date.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span>03</span>
+            <div>
+                <h3>Manage Bookings</h3>
+                <p>View your booking details in your personal dashboard.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="booking-section" id="booking">
+    <div class="booking-info">
+        <p class="tag">START YOUR JOURNEY</p>
+        <h2>Let's get you<br><span>on the list.</span></h2>
+        <p>
+            Complete the form to create your demo ticket booking.
+            Your booking details will appear in your dashboard.
+        </p>
+    </div>
 
     <form id="bookingForm">
-        <input type="text" id="name" placeholder="Your full name" required>
-        <input type="email" id="email" placeholder="Email address" required>
+        <h3>NEW BOOKING</h3>
 
+        <label>Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label>Select Event</label>
         <select id="event" required>
-            <option value="">Select event</option>
+            <option value="">Choose an event</option>
             <option>Music Concert</option>
             <option>Movie Show</option>
             <option>Sports Event</option>
             <option>Travel Ticket</option>
+            <option>Other Event</option>
         </select>
 
+        <label>Booking Date</label>
         <input type="date" id="date" required>
 
-        <input type="number" id="quantity"
-               placeholder="Number of tickets"
-               min="1" max="10" required>
+        <label>Number of Tickets</label>
+        <select id="quantity">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
 
-        <button type="submit" class="primary">
+        <button type="submit" class="primary-btn">
             Confirm Booking →
         </button>
+
+        <p id="message"></p>
+        <small class="disclaimer">
+            Academic demo only. No real payment or ticket issuance.
+        </small>
     </form>
 </section>
 
 <section class="dashboard" id="dashboard">
-    <p class="tag">YOUR BOOKINGS</p>
-    <h2>Booking dashboard.</h2>
-    <div id="bookingList">
-        <p>No bookings yet. Book your first ticket!</p>
-    </div>
+    <p class="tag">YOUR PERSONAL SPACE</p>
+    <h2>Manage your <span>bookings.</span></h2>
+
+    <p class="dashboard-intro">
+        All your demo bookings in one organised place.
+    </p>
+
+    <div id="bookingList"></div>
+</section>
+
+<section class="faq">
+    <p class="tag">FREQUENTLY ASKED QUESTIONS</p>
+    <h2>Good to know.</h2>
+
+    <details>
+        <summary>How can I book a ticket?</summary>
+        <p>Choose an event, fill in the booking form and submit your details.</p>
+    </details>
+
+    <details>
+        <summary>Can I cancel my booking?</summary>
+        <p>Yes, you can cancel demo bookings from your dashboard.</p>
+    </details>
+
+    <details>
+        <summary>Is this a real ticket booking website?</summary>
+        <p>This is an academic front-end demonstration. It does not process real payments or issue actual tickets.</p>
+    </details>
+
+    <details>
+        <summary>Where are my booking details saved?</summary>
+        <p>They are stored in your browser on the device where you made the booking.</p>
+    </details>
 </section>
 
 <footer>
-    <h3>✦ Ticketly</h3>
-    <p>Online Ticket Booking System</p>
+    <h2>✦ Ticketly.</h2>
+    <p>Make plans. Make memories.</p>
     <p>Tech Titans | CSE326</p>
-    <p>© 2026 All Rights Reserved</p>
+    <small>© 2026 Ticketly. Academic Project.</small>
 </footer>
 
 <script src="script.js"></script>
