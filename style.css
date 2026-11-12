@@ -8,200 +8,420 @@
 }
 
 body {
-    background: #f5f5f7;
-    color: #1d1d1f;
+    background: #f5f5f0;
+    color: #20221f;
+}
+
+.announcement {
+    background: #20221f;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
 }
 
 header {
+    padding: 20px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 8%;
-    background: rgba(255,255,255,0.95);
+    background: #f5f5f0;
     position: sticky;
     top: 0;
     z-index: 10;
 }
 
 .logo {
-    font-size: 23px;
+    font-size: 25px;
     font-weight: bold;
+    color: #20221f;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
-    margin: 0 12px;
-    font-size: 14px;
+    color: #555;
+    font-size: 13px;
 }
 
-button, .primary {
-    background: #0071e3;
+nav a:hover {
+    color: #91a82f;
+}
+
+.nav-btn, .primary-btn {
+    background: #20221f;
     color: white;
-    border: none;
-    padding: 13px 23px;
+    padding: 14px 22px;
     border-radius: 30px;
-    cursor: pointer;
     text-decoration: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
 }
 
 .hero {
-    text-align: center;
-    padding: 100px 20px 80px;
-    background: radial-gradient(#dceaff, #f5f5f7 65%);
+    padding: 90px 9%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
 }
 
 .tag {
-    color: #777;
-    font-size: 12px;
-    letter-spacing: 3px;
+    font-size: 11px;
+    color: #879d3e;
+    letter-spacing: 2px;
+    font-weight: bold;
     margin-bottom: 25px;
 }
 
 .hero h1 {
-    font-size: clamp(45px, 8vw, 85px);
-    letter-spacing: -4px;
+    font-size: clamp(50px, 7vw, 80px);
     line-height: 1.05;
+    letter-spacing: -4px;
 }
 
-.hero h1 span {
-    color: #86868b;
+.hero h1 span, .section h2 span,
+.booking-info h2 span, .dashboard h2 span {
+    color: #999c90;
 }
 
-.subtitle {
+.description {
     color: #777;
-    margin: 25px auto 35px;
-    max-width: 480px;
-    line-height: 1.7;
+    line-height: 1.8;
+    max-width: 450px;
+    margin: 25px 0;
 }
 
-.hero-image {
-    max-width: 650px;
-    margin: 70px auto 0;
-    padding: 30px;
+.small-text {
+    margin-top: 35px;
+    font-size: 11px;
+    color: #888;
 }
 
-.ticket-card {
-    background: white;
-    padding: 55px 35px;
+.hero-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    background: #e6e9d9;
     border-radius: 25px;
-    box-shadow: 0 20px 60px #0001;
-    text-align: left;
 }
 
-.ticket-card span {
-    color: #0071e3;
-    font-size: 12px;
+.ticket {
+    width: 80%;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 20px 50px #0002;
+    transform: rotate(3deg);
+}
+
+.ticket > p {
+    font-size: 11px;
     letter-spacing: 2px;
 }
 
-.ticket-card h2 {
-    font-size: 38px;
-    margin: 25px 0 10px;
+.ticket-art {
+    background: #d7f36a;
+    margin: 20px 0;
+    padding: 30px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.ticket-card p {
-    color: #777;
+.ticket-art span {
+    font-size: 30px;
 }
 
-.ticket-line {
-    border-top: 2px dashed #ddd;
-    margin: 35px 0 20px;
+.ticket-art h2 {
+    font-size: 50px;
+    line-height: 0.9;
+}
+
+.ticket-art small {
+    font-size: 9px;
+}
+
+.ticket h3 {
+    margin-bottom: 20px;
+}
+
+.ticket hr {
+    border: none;
+    border-top: 1px dashed #ccc;
 }
 
 .ticket-bottom {
     display: flex;
     justify-content: space-between;
+    padding-top: 15px;
+    font-size: 10px;
 }
 
-.features, .booking, .dashboard {
-    padding: 100px 8%;
-    text-align: center;
+.stats {
+    padding: 25px 9%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    gap: 15px;
 }
 
-.features h2, .booking h2, .dashboard h2 {
-    font-size: 45px;
-    margin-bottom: 45px;
+.stats h3 {
+    color: #91a82f;
+    font-size: 22px;
+}
+
+.stats p {
+    color: #777;
+    font-size: 12px;
+}
+
+.section, .dashboard {
+    padding: 100px 9%;
+}
+
+.section h2, .dashboard h2 {
+    font-size: 50px;
     letter-spacing: -2px;
+    margin-bottom: 40px;
 }
 
-.feature-grid {
+.event-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-.feature {
-    background: white;
-    padding: 45px 25px;
-    border-radius: 20px;
-    text-align: left;
+.event {
+    height: 280px;
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.feature h3 {
-    margin-bottom: 15px;
+.event h3 {
+    font-size: 55px;
 }
 
-.feature p {
-    color: #777;
+.event h2 {
+    font-size: 38px;
+    margin: 0;
+    line-height: 1;
+}
+
+.event p {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.event small {
+    font-size: 12px;
+}
+
+.music {
+    background: #d6b8ed;
+}
+
+.cinema {
+    background: #f3c8a7;
+}
+
+.sports {
+    background: #c8d8c0;
+}
+
+.how {
+    background: #20221f;
+    color: white;
+    padding: 100px 9%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.how h2 {
+    font-size: 50px;
+    line-height: 1.1;
+}
+
+.how-description {
+    color: #aaa;
+    margin-top: 25px;
+    line-height: 1.8;
+}
+
+.step {
+    display: flex;
+    gap: 25px;
+    padding: 25px 0;
+    border-bottom: 1px solid #555;
+}
+
+.step span {
+    color: #d7f36a;
+    font-weight: bold;
+}
+
+.step p {
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 8px;
     line-height: 1.6;
 }
 
-.booking {
-    background: white;
+.booking-section {
+    padding: 100px 9%;
+    background: #e9ebdf;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.booking-info h2 {
+    font-size: 55px;
+    line-height: 1.1;
+}
+
+.booking-info > p:last-child {
+    color: #777;
+    margin-top: 25px;
+    line-height: 1.8;
+    max-width: 350px;
 }
 
 form {
-    max-width: 500px;
-    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
-    gap: 17px;
+    gap: 12px;
+}
+
+form h3 {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 12px;
+    font-weight: bold;
 }
 
 input, select {
-    padding: 16px;
+    padding: 14px;
     border: 1px solid #ddd;
-    border-radius: 10px;
-    font-size: 14px;
     background: #fafafa;
+    border-radius: 8px;
+    width: 100%;
 }
 
 form button {
-    font-size: 15px;
+    margin-top: 10px;
 }
 
-.dashboard {
-    background: #f5f5f7;
+#message {
+    color: #648522;
+    font-size: 12px;
+    text-align: center;
 }
 
-#bookingList {
-    max-width: 750px;
-    margin: auto;
-    text-align: left;
+.disclaimer {
+    color: #888;
+    font-size: 10px;
+    text-align: center;
+}
+
+.dashboard-intro {
+    color: #777;
+    margin: -20px 0 30px;
 }
 
 .booking-item {
     background: white;
     padding: 22px;
+    border-radius: 12px;
     margin-bottom: 15px;
-    border-radius: 15px;
-    line-height: 1.8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.booking-item p {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.7;
 }
 
 .booking-item button {
+    background: #20221f;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.empty {
+    text-align: center;
+    padding: 45px;
+    border: 1px dashed #bbb;
+    color: #777;
+    border-radius: 12px;
+}
+
+.faq {
+    padding: 80px 9%;
+    background: white;
+}
+
+.faq h2 {
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+
+details {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+details p {
+    color: #777;
+    font-size: 13px;
     margin-top: 12px;
+    line-height: 1.7;
 }
 
 footer {
-    background: #1d1d1f;
+    background: #20221f;
     color: white;
     text-align: center;
-    padding: 45px 20px;
+    padding: 50px 20px;
     line-height: 2;
 }
 
-@media(max-width: 700px) {
+footer p, footer small {
+    color: #aaa;
+    font-size: 12px;
+}
+
+@media(max-width: 750px) {
     header {
         flex-wrap: wrap;
         gap: 15px;
@@ -209,26 +429,39 @@ footer {
 
     nav {
         width: 100%;
-        display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 15px;
     }
 
-    nav a {
-        margin: 0;
-    }
-
-    .feature-grid {
+    .hero, .how, .booking-section {
         grid-template-columns: 1fr;
     }
 
-    .hero h1 {
-        letter-spacing: -2px;
+    .hero {
+        text-align: center;
     }
 
-    .features h2, .booking h2,
-    .dashboard h2 {
-        font-size: 34px;
+    .description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .section h2, .how h2,
+    .booking-info h2 {
+        font-size: 40px;
+    }
+
+    .booking-item {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
