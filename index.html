@@ -4,65 +4,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticketly - Ticket Booking</title>
+    <title>Ticketly | Online Ticket Booking</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div class="announcement">
+    Your next great experience starts here.
+</div>
+
 <header>
-    <h2>✦ Ticketly</h2>
+    <a href="#home" class="logo">✦ Ticketly.</a>
     <nav>
         <a href="#home">Home</a>
-        <a href="#events">Events</a>
+        <a href="#events">Explore</a>
+        <a href="#how">How it works</a>
         <a href="#booking">Book Ticket</a>
         <a href="#dashboard">My Bookings</a>
     </nav>
-    <button id="authButton">Sign In</button>
+    <button id="authButton" class="auth-button">Sign In / Sign Up</button>
 </header>
 
+<main>
 <section class="hero" id="home">
-    <h1>Make Plans. Make Memories.</h1>
-    <p>Discover events and book your favourite experiences.</p>
-    <a href="#events" class="btn">Explore Events</a>
+    <div>
+        <span class="tag">YOUR PLANS, ONE PLACE</span>
+        <h1>Make plans.<br>Make memories.</h1>
+        <p>Discover exciting events, book your tickets and make every moment unforgettable with Ticketly.</p>
+        <a href="#events" class="primary-btn">Explore Events →</a>
+    </div>
+
+    <div class="hero-card">
+        <div class="ticket-top">✦ TICKETLY PRESENTS</div>
+        <div class="ticket-icon">🎟️</div>
+        <h2>Your next adventure</h2>
+        <p>Music • Movies • Sports</p>
+        <div class="ticket-line"></div>
+        <h3>ADMIT ONE</h3>
+    </div>
 </section>
 
-<section id="events">
+<section class="stats">
+    <div><h2>Easy</h2><p>Simple booking</p></div>
+    <div><h2>Fast</h2><p>Quick process</p></div>
+    <div><h2>Anytime</h2><p>Explore events</p></div>
+</section>
+
+<section class="section" id="events">
+    <span class="tag">FIND YOUR EXPERIENCE</span>
     <h2>Explore Events</h2>
-    <div class="events">
-        <div class="card">
-            <h3>🎵 Music Concert</h3>
-            <p>Enjoy live music and amazing performances.</p>
-            <button onclick="chooseEvent('Music Concert')">Book Now</button>
+    <p class="subtitle">Choose what excites you.</p>
+
+    <div class="event-grid">
+        <div class="event-card music">
+            <span>🎵</span>
+            <h3>Music Concerts</h3>
+            <p>Feel the music. Enjoy the vibe.</p>
+            <button class="event-btn" data-event="Music Concert">Book Now →</button>
         </div>
-        <div class="card">
-            <h3>🎬 Movie Show</h3>
-            <p>Watch your favourite movies.</p>
-            <button onclick="chooseEvent('Movie Show')">Book Now</button>
+
+        <div class="event-card cinema">
+            <span>🎬</span>
+            <h3>Movie Shows</h3>
+            <p>Enjoy your favourite movies.</p>
+            <button class="event-btn" data-event="Movie Show">Book Now →</button>
         </div>
-        <div class="card">
-            <h3>🏏 Sports Event</h3>
-            <p>Experience the excitement of sports.</p>
-            <button onclick="chooseEvent('Sports Event')">Book Now</button>
+
+        <div class="event-card sports">
+            <span>🏏</span>
+            <h3>Sports Events</h3>
+            <p>Experience the excitement live.</p>
+            <button class="event-btn" data-event="Sports Event">Book Now →</button>
         </div>
     </div>
 </section>
 
-<section id="booking">
-    <h2>Book Your Ticket</h2>
-    <form id="bookingForm">
-        <input id="name" placeholder="Your Name" required readonly>
-        <input id="email" type="email" placeholder="Your Email" required readonly>
+<section class="how" id="how">
+    <span class="tag">SIMPLE PROCESS</span>
+    <h2>How It Works</h2>
+    <div class="steps">
+        <div><h3>01</h3><h4>Create Account</h4><p>Sign up or sign in to Ticketly.</p></div>
+        <div><h3>02</h3><h4>Choose Event</h4><p>Select your favourite event.</p></div>
+        <div><h3>03</h3><h4>Book Tickets</h4><p>Confirm your demo booking.</p></div>
+    </div>
+</section>
 
+<section class="booking-section" id="booking">
+    <div class="booking-info">
+        <span class="tag">BOOK YOUR EXPERIENCE</span>
+        <h2>Your next event is just a few clicks away.</h2>
+        <p>Sign in and fill in the details to create your booking.</p>
+    </div>
+
+    <form id="bookingForm">
+        <h2>Book Your Ticket</h2>
+
+        <label>Your Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required readonly>
+
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required readonly>
+
+        <label>Select Event</label>
         <select id="event" required>
-            <option value="">Select Event</option>
-            <option>Music Concert</option>
-            <option>Movie Show</option>
-            <option>Sports Event</option>
+            <option value="">Choose an event</option>
+            <option value="Music Concert">Music Concert</option>
+            <option value="Movie Show">Movie Show</option>
+            <option value="Sports Event">Sports Event</option>
         </select>
 
+        <label>Event Date</label>
         <input type="date" id="date" required>
 
-        <select id="quantity">
+        <label>Number of Tickets</label>
+        <select id="quantity" required>
             <option value="1">1 Ticket</option>
             <option value="2">2 Tickets</option>
             <option value="3">3 Tickets</option>
@@ -70,37 +125,59 @@
             <option value="5">5 Tickets</option>
         </select>
 
-        <button type="submit">Confirm Booking</button>
+        <button type="submit" class="primary-btn full">Confirm Booking</button>
         <p id="message"></p>
+        <small>Academic demo only. No real payment or ticket issuance.</small>
     </form>
 </section>
 
-<section id="dashboard">
+<section class="dashboard section" id="dashboard">
+    <span class="tag">YOUR ACCOUNT</span>
     <h2>My Bookings</h2>
+    <p class="subtitle">View and manage your bookings.</p>
     <div id="bookingList"></div>
 </section>
 
+<section class="faq section">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+        <summary>How can I book a ticket?</summary>
+        <p>Sign in, select an event, choose a date and confirm your booking.</p>
+    </details>
+    <details>
+        <summary>Can I cancel my booking?</summary>
+        <p>Yes, you can cancel your demo booking from My Bookings.</p>
+    </details>
+    <details>
+        <summary>Is online payment available?</summary>
+        <p>This academic project is a booking demonstration. No real payment is processed.</p>
+    </details>
+</section>
+</main>
+
 <footer>
-    <h2>✦ Ticketly</h2>
-    <p>Team Tech Titans | CSE326</p>
-    <p>© 2026 Ticketly. Academic Demo Project.</p>
+    <h2>✦ Ticketly.</h2>
+    <p>Making every experience memorable.</p>
+    <p>© 2026 Ticketly | Team Tech Titans | CSE326</p>
 </footer>
 
-<!-- LOGIN / SIGNUP -->
-<div id="authModal" class="modal">
-    <div class="login-box">
-        <h2 id="authTitle">Welcome to Ticketly</h2>
-        <p>Sign in to continue</p>
+<!-- SIGN IN / SIGN UP MODAL -->
+<div id="authModal" class="auth-modal">
+    <div class="auth-box">
+        <button type="button" id="closeAuth" class="close-auth">×</button>
 
-        <div class="tabs">
-            <button type="button" onclick="setMode('login')">Sign In</button>
-            <button type="button" onclick="setMode('signup')">Sign Up</button>
+        <h2 id="authTitle">Welcome to Ticketly</h2>
+        <p id="authSubtitle">Sign in to continue.</p>
+
+        <div class="auth-tabs">
+            <button type="button" id="showLogin" class="active">Sign In</button>
+            <button type="button" id="showSignup">Sign Up</button>
         </div>
 
         <form id="authForm">
-            <input id="authName" placeholder="Full Name" hidden>
-            <input id="authEmail" type="email" placeholder="Email" required>
-            <input id="authPassword" type="password" placeholder="Password (6+ characters)" minlength="6" required>
+            <input type="text" id="authName" placeholder="Full Name" hidden>
+            <input type="email" id="authEmail" placeholder="Email Address" required>
+            <input type="password" id="authPassword" placeholder="Password (minimum 6 characters)" minlength="6" required>
             <button type="submit" id="authSubmit">Sign In</button>
             <p id="authMessage"></p>
         </form>
@@ -110,3 +187,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
