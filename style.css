@@ -15,714 +15,214 @@ body {
     color: #20221f;
 }
 
-.announcement {
-    background: #20221f;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 13px;
-}
-
 header {
-    background: #f5f5f0;
+    background: white;
     padding: 20px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-    color: #20221f;
-    text-decoration: none;
+header h2 {
+    color: #526b58;
 }
 
 nav {
     display: flex;
-    gap: 22px;
+    gap: 20px;
 }
 
 nav a {
-    color: #444;
     text-decoration: none;
-    font-size: 14px;
+    color: #333;
 }
 
-nav a:hover {
-    color: #64816c;
-}
-
-button, .primary-btn {
-    cursor: pointer;
-}
-
-.auth-button, .primary-btn {
-    background: #20221f;
-    color: white;
-    padding: 13px 21px;
-    border: none;
-    border-radius: 30px;
-    text-decoration: none;
-    display: inline-block;
-    font-weight: bold;
-}
-
-.auth-button:hover, .primary-btn:hover {
+button, .btn {
     background: #526b58;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button:hover, .btn:hover {
+    background: #263c2c;
 }
 
 .hero {
-    padding: 90px 10%;
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    align-items: center;
-    gap: 50px;
-}
-
-.tag {
-    color: #68816d;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    text-align: center;
+    padding: 100px 20px;
+    background: #dce7d9;
 }
 
 .hero h1 {
-    font-size: clamp(45px, 6vw, 75px);
-    line-height: 1.05;
-    margin: 20px 0;
+    font-size: 45px;
+    margin-bottom: 20px;
 }
 
 .hero p {
-    color: #666;
-    line-height: 1.8;
-    max-width: 480px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    color: #555;
 }
 
-.hero-card {
-    background: #dce7d9;
-    border-radius: 25px;
-    padding: 45px 30px;
-    text-align: center;
-    box-shadow: 0 15px 35px #00000012;
-}
-
-.ticket-top {
-    font-size: 12px;
-    letter-spacing: 2px;
-}
-
-.ticket-icon {
-    font-size: 90px;
-    margin: 35px 0 20px;
-}
-
-.hero-card h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.hero-card p {
-    margin: auto;
-}
-
-.ticket-line {
-    border-top: 2px dashed #819080;
-    margin: 25px 0;
-}
-
-.stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    background: #e7e9df;
-    padding: 35px 10%;
+section {
+    padding: 65px 8%;
     text-align: center;
 }
 
-.stats h2 {
-    margin-bottom: 8px;
+section h2 {
+    margin-bottom: 30px;
+    font-size: 32px;
 }
 
-.stats p, .subtitle {
-    color: #777;
-}
-
-.section {
-    padding: 80px 10%;
-}
-
-.section h2, .how h2 {
-    font-size: 38px;
-    margin: 12px 0;
-}
-
-.event-grid {
+.events {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    margin-top: 35px;
+    gap: 20px;
 }
 
-.event-card {
-    padding: 30px;
-    border-radius: 20px;
-    min-height: 240px;
+.card {
+    background: white;
+    padding: 35px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #00000010;
+    transition: 0.3s;
 }
 
-.music {
-    background: #e5dff1;
+.card:hover {
+    transform: translateY(-7px);
 }
 
-.cinema {
-    background: #f2e2d4;
+.card h3 {
+    margin-bottom: 15px;
 }
 
-.sports {
-    background: #dce8dc;
-}
-
-.event-card span {
-    font-size: 40px;
-}
-
-.event-card h3 {
-    font-size: 23px;
-    margin: 22px 0 10px;
-}
-
-.event-card p {
+.card p {
     color: #666;
     margin-bottom: 20px;
 }
 
-.event-btn {
-    background: #20221f;
-    color: white;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 20px;
-}
-
-.how {
-    background: #20221f;
-    color: white;
-    padding: 75px 10%;
-}
-
-.how h2 {
-    margin-bottom: 35px;
-}
-
-.steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.steps h3 {
-    color: #a9c4a8;
-    font-size: 35px;
-    margin-bottom: 15px;
-}
-
-.steps h4 {
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-
-.steps p {
-    color: #bbb;
-    line-height: 1.6;
-}
-
-.booking-section {
-    padding: 80px 10%;
+#booking {
     background: #e4e9df;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.booking-info h2 {
-    font-size: 40px;
-    line-height: 1.2;
-    margin: 20px 0;
-}
-
-.booking-info p {
-    color: #666;
-    line-height: 1.7;
 }
 
 #bookingForm {
+    max-width: 450px;
+    margin: auto;
     background: white;
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 15px;
     display: grid;
-    gap: 12px;
+    gap: 15px;
 }
 
-#bookingForm h2 {
-    margin-bottom: 12px;
-}
-
-#bookingForm label {
-    font-size: 14px;
-    font-weight: bold;
-}
-
-#bookingForm input,
-#bookingForm select {
-    padding: 13px;
+input, select {
+    width: 100%;
+    padding: 14px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    width: 100%;
-    font-size: 14px;
-    background: white;
-}
-
-.full {
-    width: 100%;
-    margin-top: 10px;
-}
-
-#message {
-    color: #526b58;
-    font-size: 14px;
-}
-
-#bookingForm small {
-    color: #888;
-    text-align: center;
 }
 
 .booking-item {
     background: white;
-    padding: 22px;
-    border-radius: 14px;
-    margin-top: 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 15px auto;
+    max-width: 600px;
+    text-align: left;
 }
 
 .booking-item p {
-    color: #666;
-    margin-top: 8px;
-    overflow-wrap: anywhere;
-}
-
-.booking-item button {
-    border: none;
-    background: #20221f;
-    color: white;
-    padding: 12px 16px;
-    border-radius: 20px;
-}
-
-.empty {
-    padding: 30px;
-    background: white;
-    border-radius: 15px;
-    margin-top: 20px;
-}
-
-.empty p {
-    color: #777;
-    margin-top: 10px;
-}
-
-.faq details {
-    background: white;
-    padding: 20px;
-    margin-top: 12px;
-    border-radius: 10px;
-}
-
-.faq summary {
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.faq details p {
-    color: #666;
-    margin-top: 15px;
-    line-height: 1.6;
+    margin: 8px 0;
 }
 
 footer {
     background: #20221f;
     color: white;
-    padding: 40px 10%;
     text-align: center;
-}
-
-footer h2 {
-    margin-bottom: 12px;
+    padding: 35px;
 }
 
 footer p {
-    color: #bbb;
     margin-top: 10px;
+    color: #ccc;
 }
 
-/* Authentication modal */
+/* Login Modal */
 
-.auth-modal {
+.modal {
     display: none;
     position: fixed;
     inset: 0;
-    background: #0009;
-    z-index: 9999;
+    background: #000b;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
-.auth-modal.show {
+.modal.show {
     display: flex;
 }
 
-.auth-box {
+.login-box {
     background: white;
-    width: 100%;
-    max-width: 420px;
     padding: 35px;
     border-radius: 18px;
-    position: relative;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
 }
 
-.auth-box h2 {
+.login-box h2 {
     margin-bottom: 10px;
 }
 
-.auth-box p {
+.login-box p {
     color: #666;
 }
 
-.close-auth {
-    position: absolute;
-    top: 10px;
-    right: 18px;
-    border: none;
-    background: none;
-    font-size: 28px;
-}
-
-.auth-tabs {
+.tabs {
     display: flex;
     gap: 10px;
-    margin: 25px 0 18px;
-}
-
-.auth-tabs button {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background: #f5f5f0;
-}
-
-.auth-tabs button.active {
-    background: #20221f;
-    color: white;
-}
-
-#authForm {
-    display: grid;
-    gap: 14px;
-}
-
-#authForm input {
-    padding: 14px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 100%;
-}
-
-#authForm input[hidden] {
-    display: none;
-}
-
-#authSubmit {
-    background: #20221f;
-    color: white;
-    border: none;
-    padding: 14px;
-    border-radius: 8px;
-    font-weight: bold;
-}
-
-#authMessage {
-    font-size: 14px;
-}
-
-@media(max-width: 800px) {
-    header {
-        flex-wrap: wrap;
-    }
-
-    nav {
-        order: 3;
-        width: 100%;
-        flex-wrap: wrap;
-        gap: 14px;
-    }
-
-    .hero, .booking-section {
-        grid-template-columns: 1fr;
-    }
-
-    .event-grid, .steps {
-        grid-template-columns: 1fr;
-    }
-
-    .hero {
-        padding: 60px 7%;
-    }
-
-    .section, .booking-section, .how {
-        padding: 55px 7%;
-    }
-
-    .stats {
-        padding: 30px 5%;
-    }
-
-    .booking-item {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-}
-
-/* ===== PREMIUM TICKETLY AUTH DESIGN ===== */
-
-header .auth-button {
-    background: #20221f !important;
-    color: #fff !important;
-    border: none !important;
-    padding: 13px 23px !important;
-    border-radius: 30px !important;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-header .auth-button:hover {
-    background: #647d65 !important;
-    transform: translateY(-2px);
-}
-
-/* Modal background */
-
-.auth-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    background: rgba(18, 25, 20, 0.72);
-    backdrop-filter: blur(8px);
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.auth-modal.show {
-    display: flex;
-    animation: authFade 0.3s ease;
-}
-
-@keyframes authFade {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Login box */
-
-.auth-box {
-    width: 100%;
-    max-width: 440px;
-    padding: 42px 36px;
-    background: #fbfcf8;
-    border-radius: 25px;
-    position: relative;
-    box-shadow: 0 25px 80px rgba(0,0,0,0.3);
-    animation: authSlide 0.35s ease;
-}
-
-@keyframes authSlide {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.auth-box::before {
-    content: "✦ TICKETLY";
-    display: block;
-    color: #647d65;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 25px;
-}
-
-.auth-box h2 {
-    font-size: 30px;
-    color: #20221f;
-    margin-bottom: 10px;
-}
-
-.auth-box > p {
-    color: #777;
-    font-size: 14px;
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-.close-auth {
-    position: absolute;
-    top: 18px;
-    right: 22px;
-    background: #e9eee6;
-    border: none;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    font-size: 24px;
-    color: #20221f;
-    cursor: pointer;
-}
-
-/* Tabs */
-
-.auth-tabs {
-    display: flex;
-    padding: 5px;
-    background: #e9eee6;
-    border-radius: 12px;
-    gap: 5px;
     margin: 25px 0;
 }
 
-.auth-tabs button {
+.tabs button {
     flex: 1;
-    padding: 13px;
-    border: none;
-    background: transparent;
-    border-radius: 9px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #666;
-    cursor: pointer;
-    transition: 0.3s;
 }
-
-.auth-tabs button.active {
-    background: #20221f;
-    color: white;
-    box-shadow: 0 4px 10px #0002;
-}
-
-/* Inputs */
 
 #authForm {
     display: grid;
-    gap: 16px;
+    gap: 15px;
 }
 
-#authForm input {
-    width: 100%;
-    padding: 16px;
-    border: 1px solid #e0e3dc;
-    border-radius: 11px;
-    outline: none;
-    background: white;
-    color: #20221f;
-    font-size: 14px;
-    transition: 0.2s;
-}
-
-#authForm input:focus {
-    border-color: #718a70;
-    box-shadow: 0 0 0 3px #718a7020;
-}
-
-#authForm input[hidden] {
+#authName[hidden] {
     display: none;
 }
 
-/* Submit button */
-
-#authSubmit {
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 11px;
-    background: #20221f;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#authSubmit:hover {
-    background: #647d65;
-    transform: translateY(-2px);
-}
-
 #authMessage {
-    font-size: 13px;
-    text-align: center;
-    color: #647d65;
-    min-height: 18px;
+    font-size: 14px;
 }
 
-/* Hero ticket card improvement */
-
-.hero-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 400px;
-    text-align: center;
-    padding: 40px;
-}
-
-.hero-card .ticket-icon {
-    display: block;
-    font-size: 85px;
-    margin: 35px 0 20px;
-}
-
-.hero-card h2 {
-    margin-bottom: 12px;
-}
-
-.hero-card p {
-    margin: 0;
-}
-
-@media(max-width: 500px) {
-    .auth-box {
-        padding: 35px 23px;
+@media(max-width: 700px) {
+    header {
+        justify-content: center;
     }
 
-    .auth-box h2 {
-        font-size: 25px;
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .events {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 32px;
     }
 }
